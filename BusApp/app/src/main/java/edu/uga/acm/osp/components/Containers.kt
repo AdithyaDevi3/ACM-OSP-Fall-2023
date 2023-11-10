@@ -17,11 +17,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import edu.uga.acm.osp.ui.theme.BusAppTheme
 
 // Basic container that accepts a header, content, and context composable
+
+
 @Composable
+
 fun BasicContainer(
     containerHeader: String, // Container header
     context: @Composable (Modifier) -> Unit = {}, // Optional view all button, info, etc.

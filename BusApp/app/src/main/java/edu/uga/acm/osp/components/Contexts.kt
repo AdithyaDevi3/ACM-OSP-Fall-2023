@@ -17,10 +17,12 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import edu.uga.acm.osp.ui.theme.BusAppTheme
 
 // Right-justified tiny button context module, primarily for use in a ListItem composable
+@Preview
 @Composable
 fun ContextAction(
     actionIcon: ImageVector, // Context action icon (Icons.StyleName.IconName)
