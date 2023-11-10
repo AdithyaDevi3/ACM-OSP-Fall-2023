@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import edu.uga.acm.osp.components.BasicContainer
 import edu.uga.acm.osp.composables.Header
 import edu.uga.acm.osp.composables.NavBar
 import edu.uga.acm.osp.composables.NotificationComposable
@@ -24,4 +25,7 @@ import edu.uga.acm.osp.ui.theme.BulldogRed
 @Composable
 fun HomeScreen(navController: NavController) {
     Header(text = "Home")
+    BasicContainer(containerHeader = "Webview") {
+        myButton(text = "test", int = 3, navController = navController, color = Color.Black, route = Screen.SettingScreen.route)
+    }
 }

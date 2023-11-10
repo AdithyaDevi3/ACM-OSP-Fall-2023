@@ -19,33 +19,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.Navigation
 import edu.uga.acm.osp.components.BasicContainer
 import edu.uga.acm.osp.components.ContextAction
 import edu.uga.acm.osp.components.ContextInfo
 import edu.uga.acm.osp.components.IconListItem
-import edu.uga.acm.osp.components.InvisibleContainer
 import edu.uga.acm.osp.components.LabelListItem
+import edu.uga.acm.osp.composables.myButton
+import edu.uga.acm.osp.nav.Screen
 import edu.uga.acm.osp.ui.theme.BusAppTheme
+import edu.uga.acm.osp.nav.Navigation
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // For the time being, sets the app background to the correct
-            // color as determine by System theme
-            Box(
-                modifier = Modifier
-                    .background(BusAppTheme.colors.background)
-                    .fillMaxSize()
-            ) {
-                testContainer()
-            }
+            Navigation()
         }
     }
 
     // Container with list elements, purely for demonstrative purposes
-
+    @Preview
     @Composable
     fun testContainer() {
         BasicContainer(
@@ -108,7 +103,6 @@ class MainActivity : ComponentActivity() {
     // Icon list element, purely for demonstrative purposes
     @Preview
     @Composable
-
     fun testIconListItem2() {
         IconListItem(
             header = "Yet another header!",
@@ -130,31 +124,4 @@ class MainActivity : ComponentActivity() {
             }
         )
     }
-    @Preview
-    @Composable
-    fun testContainer10(){
-            BasicContainer(
-                header = "header part 25"
-    content = {
-                    ContextAction(
-
-
-    )
-
-                }
-
-            )
-    }
-
-    private fun BasicContainer(header: String) {
-
-    }
-
-    private fun InvisibleContainer() {
-        TODO("Not yet implemented")
-    }
-}
-
-private infix fun String.ContextAction(function: () -> Unit): String {
-
 }
