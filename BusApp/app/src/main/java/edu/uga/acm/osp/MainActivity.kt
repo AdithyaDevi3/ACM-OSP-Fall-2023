@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.Navigation
 import edu.uga.acm.osp.components.BasicContainer
@@ -29,6 +30,7 @@ import edu.uga.acm.osp.composables.myButton
 import edu.uga.acm.osp.nav.Screen
 import edu.uga.acm.osp.ui.theme.BusAppTheme
 import edu.uga.acm.osp.nav.Navigation
+import edu.uga.acm.osp.ui.theme.mapView
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -40,7 +42,7 @@ class MainActivity : ComponentActivity() {
     }
 
     // Container with list elements, purely for demonstrative purposes
-    @Preview
+   // @Preview
     @Composable
     fun testContainer() {
         BasicContainer(
@@ -101,7 +103,7 @@ class MainActivity : ComponentActivity() {
     }
 
     // Icon list element, purely for demonstrative purposes
-    @Preview
+
     @Composable
     fun testIconListItem2() {
         IconListItem(
@@ -124,4 +126,76 @@ class MainActivity : ComponentActivity() {
             }
         )
     }
+
+
+    @Preview
+@Composable
+fun testNewMapView(){
+    val painter = painterResource(id = R.drawable.snelling_dining_commons_bus_stop)
+    mapView(painter = painter, modifier = Modifier, string = "")
 }
+}
+
+
+
+//
+//
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            val painter = painterResource(id=R.drawable._60_college_station_bus_stop)
+//            val description ="60 College Station Bus Station"
+//            val title = "test map"
+//
+//            Box(modifier = Modifier.fillMaxSize()
+//            ) {
+//                ImageCard(
+//                    painter = painter,
+//                    contentDescription = description,
+//                    title = title
+//                )
+//            }
+//
+//
+//        }
+//    }
+//}
+//
+//
+//@Composable
+//fun ImageCard(
+//    painter: Painter,
+//    contentDescription: String,
+//    title: String,
+//    modifier: Modifier = Modifier
+//) {
+//    Card(
+//        modifier = modifier.fillMaxSize(),
+//        shape = RoundedCornerShape(15.dp),
+//        elevation = 20000.dp
+//    ) {
+//        Box(modifier = Modifier.fillMaxSize()) {
+//            Image(
+//                painter = painter,
+//                contentDescription = contentDescription,
+//                contentScale = ContentScale.Crop
+//            )
+//            Box(modifier = Modifier
+//                .fillMaxSize()
+//
+//                )
+//
+//            Box(modifier = Modifier
+//                .fillMaxSize()
+//                .padding(12.dp),
+//                contentAlignment = Alignment.BottomStart) {
+//                //.sp for fonts .dp for everything else
+//                Text(title, style = TextStyle(color = Color.White, fontSize = 16.sp))
+//            }
+//        }
+//    }
+//}
+
+
+

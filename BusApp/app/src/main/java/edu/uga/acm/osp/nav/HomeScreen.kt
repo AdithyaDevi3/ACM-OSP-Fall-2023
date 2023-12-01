@@ -9,10 +9,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import edu.uga.acm.osp.R
 import edu.uga.acm.osp.components.BasicContainer
 import edu.uga.acm.osp.composables.Header
 import edu.uga.acm.osp.composables.NavBar
@@ -21,11 +23,12 @@ import edu.uga.acm.osp.composables.TestComposable
 import edu.uga.acm.osp.composables.displayNavBar
 import edu.uga.acm.osp.composables.myButton
 import edu.uga.acm.osp.ui.theme.BulldogRed
+import edu.uga.acm.osp.ui.theme.mapView
 
 @Composable
 fun HomeScreen(navController: NavController) {
     Header(text = "Home")
-    BasicContainer(containerHeader = "Webview") {
-        myButton(text = "test", int = 3, navController = navController, color = Color.Black, route = Screen.SettingScreen.route)
-    }
+    val painter = painterResource(id = R.drawable.snelling_dining_commons_bus_stop)
+    mapView(painter = painter, modifier = Modifier, string = "")
+    displayNavBar(navController)
 }
